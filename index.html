@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giselle Tate | Luxury Real Estate Specialist | Key Realty Las Vegas</title>
+  <meta name="description" content="Giselle Tate – REALTOR® and Luxury Real Estate Specialist at Key Realty. Serving Las Vegas, NV. Unlocking Doors. Opening Dreams." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── DESIGN TOKENS ─── */
+    :root {
+      --navy:      #001B2A;
+      --navy-mid:  #052030;
+      --gold:      #D4A637;
+      --gold-lt:   #e8c05a;
+      --gold-dim:  rgba(212,166,55,.12);
+      --white:     #FFFFFF;
+      --cream:     #F5F0E8;
+      --off-white: #F7F4EF;
+      --charcoal:  #333333;
+      --gray:      #6b6b6b;
+      --lt-gray:   #E6E6E6;
+    }
+
+    /* ─── RESET ─── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Montserrat',sans-serif;font-weight:400;color:var(--charcoal);background:var(--white);overflow-x:hidden;}
+    img{display:block;max-width:100%;}
+    a{text-decoration:none;color:inherit;}
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar{width:5px;}
+    ::-webkit-scrollbar-track{background:var(--navy);}
+    ::-webkit-scrollbar-thumb{background:var(--gold);}
+
+    /* ─── REVEAL ANIMATIONS ─── */
+    .rv{opacity:0;transform:translateY(32px);transition:opacity .9s ease,transform .9s ease;}
+    .rv.in{opacity:1;transform:none;}
+    .rv.d1{transition-delay:.1s;} .rv.d2{transition-delay:.2s;} .rv.d3{transition-delay:.3s;}
+    .rv.d4{transition-delay:.4s;} .rv.d5{transition-delay:.5s;} .rv.d6{transition-delay:.6s;}
+
+    /* ─── DIAMOND TEXTURE ─── */
+    .diamond-bg::before{
+      content:'';position:absolute;inset:0;pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 2 L42 22 L22 42 L2 22 Z' fill='none' stroke='rgba(212,166,55,0.07)' stroke-width='1'/%3E%3C/svg%3E");
+      background-size:44px 44px;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn{
+      display:inline-block;font-family:'Montserrat',sans-serif;
+      font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+      padding:15px 36px;border:2px solid;border-radius:1px;
+      transition:background .25s,color .25s,border-color .25s;cursor:pointer;
+    }
+    .btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+    .btn-gold:hover{background:transparent;color:var(--gold);}
+    .btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.4);}
+    .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+    .btn-navy{background:var(--navy);color:var(--white);border-color:var(--navy);}
+    .btn-navy:hover{background:var(--gold);border-color:var(--gold);color:var(--navy);}
+    .btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+    .btn-outline:hover{background:var(--navy);color:var(--white);}
+
+    /* ─── SECTION HELPERS ─── */
+    .wrap{max-width:1260px;margin:0 auto;}
+    .pad{padding:110px 56px;}
+    .pad-sm{padding:72px 56px;}
+
+    .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+    .eyebrow-line{width:38px;height:1px;background:var(--gold);}
+    .eyebrow span{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:var(--gold);letter-spacing:5px;text-transform:uppercase;}
+    .eyebrow.center{justify-content:center;}
+
+    .sec-title{font-family:'Cinzel',serif;font-size:clamp(2rem,3.5vw,3.1rem);font-weight:700;line-height:1.1;color:var(--navy);}
+    .sec-title.light{color:var(--white);}
+    .sec-lead{font-size:.93rem;font-weight:300;color:var(--gray);line-height:1.9;max-width:520px;margin-top:16px;}
+    .sec-lead.light{color:rgba(255,255,255,.55);}
+
+    /* ──────────────────────────────────────
+       NAVIGATION
+    ────────────────────────────────────── */
+    #nav{
+      position:fixed;top:0;left:0;right:0;z-index:900;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:24px 56px;
+      transition:background .4s,padding .4s,box-shadow .4s;
+    }
+    #nav.stuck{
+      background:rgba(0,27,42,.96);
+      padding:15px 56px;
+      box-shadow:0 4px 40px rgba(0,0,0,.35);
+      backdrop-filter:blur(12px);
+    }
+
+    .nav-logo{display:flex;align-items:center;gap:18px;}
+    .nav-key{width:58px;height:68px;flex-shrink:0;}
+    .nav-brand{line-height:1;}
+    .nav-brand-top{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:5px;display:block;}
+    .nav-brand-sub{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:600;color:var(--gold);letter-spacing:3px;text-transform:uppercase;display:block;margin-top:5px;}
+
+    .nav-links{display:flex;align-items:center;gap:38px;list-style:none;}
+    .nav-links a{font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.8);position:relative;transition:color .2s;}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:100%;height:1px;background:var(--gold);transition:right .3s;}
+    .nav-links a:hover{color:var(--gold);}
+    .nav-links a:hover::after{right:0;}
+    .nav-links .cta-link{background:var(--gold);color:var(--navy) !important;padding:10px 22px;border-radius:1px;}
+    .nav-links .cta-link::after{display:none;}
+    .nav-links .cta-link:hover{background:var(--gold-lt);}
+
+    .ham{display:none;cursor:pointer;flex-direction:column;gap:5px;z-index:910;}
+    .ham span{width:24px;height:2px;background:#fff;display:block;transition:.3s;}
+
+    /* ──────────────────────────────────────
+       HERO — FULL BLEED LUXURY HOME
+    ────────────────────────────────────── */
+    #hero{
+      position:relative;min-height:100vh;
+      display:flex;align-items:flex-end;
+      overflow:hidden;
+    }
+    .hero-bg{
+      position:absolute;inset:0;
+      background:url('brand_assets/hero_picture.png') center center / cover no-repeat;
+      transform:scale(1.04);
+      transition:transform 8s ease-out;
+    }
+    #hero.loaded .hero-bg{transform:scale(1);}
+
+    /* Gradient: bottom-left dark, top-right transparent */
+    .hero-gradient{
+      position:absolute;inset:0;
+      background:
+        linear-gradient(to top, rgba(0,27,42,.88) 0%, rgba(0,27,42,.5) 35%, transparent 65%),
+        linear-gradient(to right, rgba(0,27,42,.75) 0%, rgba(0,27,42,.3) 45%, transparent 70%);
+    }
+
+    .hero-content{
+      position:relative;z-index:2;
+      padding:80px 56px 100px;
+      max-width:760px;
+    }
+    .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+    .hero-eyebrow-line{width:38px;height:1px;background:var(--gold);}
+    .hero-eyebrow span{font-family:'Cinzel',serif;font-size:.6rem;font-weight:600;color:var(--gold);letter-spacing:5px;text-transform:uppercase;}
+
+    .hero-title{
+      font-family:'Cinzel',serif;
+      font-size:clamp(2.8rem,6vw,5.5rem);
+      font-weight:900;line-height:.92;
+      color:#fff;margin-bottom:28px;
+    }
+    .hero-title .line2{color:var(--gold);}
+
+    .hero-sub{
+      font-size:clamp(.85rem,1.5vw,1rem);font-weight:300;
+      color:rgba(255,255,255,.72);line-height:1.8;
+      max-width:520px;margin-bottom:44px;
+    }
+
+    .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:60px;}
+
+    /* Agent badge floating bottom-right of hero */
+    .hero-agent-badge{
+      position:absolute;bottom:48px;right:56px;z-index:3;
+      background:rgba(0,27,42,.85);backdrop-filter:blur(10px);
+      border:1px solid rgba(212,166,55,.3);
+      padding:18px 24px;
+      display:flex;align-items:center;gap:16px;
+      max-width:320px;
+    }
+    .hero-badge-photo{
+      width:60px;height:60px;border-radius:50%;
+      border:2px solid var(--gold);
+      overflow:hidden;flex-shrink:0;
+    }
+    .hero-badge-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+    .hero-badge-name{font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;color:#fff;letter-spacing:1px;display:block;}
+    .hero-badge-role{font-size:.62rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:block;margin-top:3px;}
+    .hero-badge-brokerage{font-size:.62rem;color:rgba(255,255,255,.45);display:block;margin-top:5px;}
+
+    /* Scroll indicator */
+    .hero-scroll{
+      position:absolute;bottom:40px;left:56px;z-index:2;
+      display:flex;align-items:center;gap:10px;
+      color:rgba(255,255,255,.4);font-size:.6rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+    }
+    .hero-scroll-line{width:40px;height:1px;background:rgba(255,255,255,.25);}
+
+    /* ──────────────────────────────────────
+       QUICK INFO BAR
+    ────────────────────────────────────── */
+    .info-bar{
+      background:var(--gold);
+      display:grid;grid-template-columns:repeat(4,1fr);
+    }
+    .info-item{
+      padding:26px 20px;text-align:center;
+      border-right:1px solid rgba(0,27,42,.14);
+    }
+    .info-item:last-child{border-right:none;}
+    .info-n{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--navy);line-height:1;}
+    .info-l{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(0,27,42,.6);margin-top:6px;}
+
+    /* ──────────────────────────────────────
+       ABOUT — SOLO PICTURE
+    ────────────────────────────────────── */
+    #about{background:var(--off-white);}
+    .about-grid{display:grid;grid-template-columns:420px 1fr;gap:80px;align-items:center;}
+
+    /* photo */
+    .about-photo{position:relative;}
+    .about-photo-inner{
+      position:relative;border-radius:2px;overflow:hidden;
+      aspect-ratio:3/4;
+      box-shadow:0 40px 80px rgba(0,27,42,.2);
+    }
+    .about-photo-inner img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+    .about-photo-accent{
+      position:absolute;top:-18px;left:-18px;
+      width:76px;height:76px;
+      border-top:3px solid var(--gold);
+      border-left:3px solid var(--gold);
+      pointer-events:none;
+    }
+    .about-photo-accent2{
+      position:absolute;bottom:-18px;right:-18px;
+      width:76px;height:76px;
+      border-bottom:3px solid var(--gold);
+      border-right:3px solid var(--gold);
+      pointer-events:none;
+    }
+    .about-badge{
+      position:absolute;bottom:-24px;right:-24px;
+      background:var(--navy);padding:22px 28px;text-align:center;
+      box-shadow:0 12px 40px rgba(0,0,0,.3);
+    }
+    .about-badge-n{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1;}
+    .about-badge-l{font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:5px;}
+
+    /* text */
+    .about-body{font-size:.93rem;font-weight:400;color:var(--charcoal);line-height:1.9;}
+    .about-body p+p{margin-top:15px;}
+    .about-body strong{color:var(--navy);font-weight:600;}
+
+    .about-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+    .chip{font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;background:var(--navy);color:var(--gold);border-radius:1px;}
+    .about-lic{font-size:.74rem;color:var(--gray);letter-spacing:1px;margin-top:14px;}
+    .about-lic em{color:var(--gold);font-style:normal;font-weight:600;}
+
+    /* ──────────────────────────────────────
+       BRAND PILLARS
+    ────────────────────────────────────── */
+    #pillars{background:var(--navy);position:relative;overflow:hidden;}
+    .pillars-header{text-align:center;margin-bottom:64px;}
+    .pillars-header .eyebrow{justify-content:center;}
+
+    .pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+    .pillar{
+      background:rgba(255,255,255,.03);border:1px solid rgba(212,166,55,.1);
+      padding:48px 32px;text-align:center;
+      transition:background .3s,border-color .3s;position:relative;overflow:hidden;
+    }
+    .pillar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:center;transition:transform .35s;}
+    .pillar:hover{background:var(--gold-dim);border-color:rgba(212,166,55,.3);}
+    .pillar:hover::after{transform:scaleX(1);}
+
+    .pillar-icon{width:58px;height:58px;margin:0 auto 22px;border:1px solid rgba(212,166,55,.28);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s;}
+    .pillar:hover .pillar-icon{background:var(--gold-dim);}
+    .pillar-icon svg{width:26px;fill:var(--gold);}
+    .pillar-title{font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
+    .pillar-desc{font-size:.8rem;font-weight:300;color:rgba(255,255,255,.44);line-height:1.8;}
+
+    /* ──────────────────────────────────────
+       SERVICES
+    ────────────────────────────────────── */
+    #services{background:var(--white);}
+    .services-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:2px;background:var(--lt-gray);
+      margin-top:60px;
+    }
+    .svc{
+      background:var(--white);padding:44px 36px;
+      position:relative;overflow:hidden;transition:background .3s;
+    }
+    .svc::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+    .svc:hover{background:var(--off-white);}
+    .svc:hover::before{transform:scaleX(1);}
+    .svc-num{font-family:'Cinzel',serif;font-size:2.6rem;font-weight:700;color:rgba(212,166,55,.18);line-height:1;margin-bottom:10px;}
+    .svc-title{font-family:'Cinzel',serif;font-size:.88rem;font-weight:700;letter-spacing:1.5px;color:var(--navy);margin-bottom:12px;}
+    .svc-desc{font-size:.84rem;font-weight:400;color:var(--gray);line-height:1.8;}
+
+    /* ──────────────────────────────────────
+       CTA BANNER — THE SURPRISE
+       "Magazine Cover" editorial medallion
+    ────────────────────────────────────── */
+    #cta{
+      background:var(--cream);
+      position:relative;overflow:hidden;
+    }
+
+    /* watermark removed */
+    .cta-watermark{display:none;line-height:1;
+    }
+
+    /* Decorative gold lines top + bottom */
+    .cta-rule{height:1px;background:linear-gradient(to right, transparent, var(--gold) 30%, var(--gold) 70%, transparent);}
+
+    .cta-inner{
+      display:grid;
+      grid-template-columns:1fr 420px 1fr;
+      align-items:center;
+      gap:0;
+      position:relative;z-index:1;
+      padding:80px 56px;
+      max-width:1260px;
+      margin:0 auto;
+    }
+
+    /* Left column — stats */
+    .cta-stats{display:flex;flex-direction:column;gap:36px;padding-right:48px;border-right:1px solid rgba(212,166,55,.3);}
+    .cta-stat-item{}
+    .cta-stat-n{font-family:'Cinzel',serif;font-size:3rem;font-weight:700;color:var(--navy);line-height:1;}
+    .cta-stat-l{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-top:4px;}
+    .cta-stat-d{font-size:.78rem;color:var(--gray);margin-top:4px;font-weight:300;}
+
+    /* Center — portrait medallion */
+    .cta-portrait{display:flex;flex-direction:column;align-items:center;padding:0 36px;}
+    .cta-medallion{
+      position:relative;width:280px;height:280px;flex-shrink:0;
+    }
+    /* Outer spinning gold ring */
+    .cta-ring{
+      position:absolute;inset:-12px;
+      border-radius:50%;
+      border:1px solid rgba(212,166,55,.35);
+      animation:spin-slow 20s linear infinite;
+    }
+    .cta-ring::before{
+      content:'';position:absolute;top:50%;left:-4px;
+      width:8px;height:8px;background:var(--gold);border-radius:50%;
+      transform:translateY(-50%);
+    }
+    .cta-ring::after{
+      content:'';position:absolute;top:50%;right:-4px;
+      width:8px;height:8px;background:var(--gold);border-radius:50%;
+      transform:translateY(-50%);
+    }
+    @keyframes spin-slow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+    /* Inner gold border circle */
+    .cta-circle{
+      position:absolute;inset:0;
+      border-radius:50%;
+      border:3px solid var(--gold);
+      overflow:hidden;
+    }
+    .cta-circle img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+
+    /* Key icon above */
+    .cta-key-icon{margin-bottom:24px;}
+    .cta-key-icon svg{width:48px;fill:none;}
+
+    /* Motto below */
+    .cta-motto{font-family:'Cinzel',serif;font-size:.65rem;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--navy);text-align:center;margin-top:28px;line-height:1.9;}
+    .cta-motto em{display:block;color:var(--gold);font-style:normal;}
+
+    /* Right column — quote + CTA */
+    .cta-quote-col{padding-left:48px;border-left:1px solid rgba(212,166,55,.3);}
+    .cta-quote-mark{font-family:'Cinzel',serif;font-size:5rem;font-weight:900;color:var(--gold);line-height:.7;margin-bottom:16px;opacity:.4;}
+    .cta-quote-text{font-family:'Cinzel',serif;font-size:clamp(1.1rem,2vw,1.55rem);font-weight:600;color:var(--navy);line-height:1.45;margin-bottom:20px;}
+    .cta-quote-attr{font-size:.72rem;font-weight:400;color:var(--gray);letter-spacing:2px;text-transform:uppercase;margin-bottom:36px;}
+    .cta-quote-attr strong{color:var(--gold);}
+
+    /* ──────────────────────────────────────
+       TESTIMONIALS
+    ────────────────────────────────────── */
+    #testimonials{background:var(--navy);position:relative;overflow:hidden;}
+    .t-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;}
+    .t-header .eyebrow-line{background:rgba(212,166,55,.5);}
+
+    .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .t-card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(212,166,55,.12);
+      border-top:3px solid var(--gold);
+      padding:40px 32px;
+      transition:background .3s,transform .3s;
+    }
+    .t-card:hover{background:rgba(255,255,255,.07);transform:translateY(-4px);}
+    .t-stars{color:var(--gold);font-size:.85rem;letter-spacing:3px;margin-bottom:16px;}
+    .t-text{font-size:.88rem;font-weight:300;font-style:italic;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:26px;}
+    .t-author{display:flex;align-items:center;gap:14px;}
+    .t-av{width:42px;height:42px;border-radius:50%;background:var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;color:var(--navy);}
+    .t-name{font-size:.82rem;font-weight:600;color:#fff;}
+    .t-loc{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:2px;}
+
+    /* ──────────────────────────────────────
+       CONTACT
+    ────────────────────────────────────── */
+    #contact{background:var(--white);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start;}
+
+    .c-lead{font-size:.9rem;font-weight:300;color:var(--gray);line-height:1.85;margin:16px 0 36px;}
+    .c-row{display:flex;gap:18px;align-items:flex-start;margin-bottom:24px;}
+    .c-ic{width:46px;height:46px;flex-shrink:0;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+    .c-ic svg{width:20px;fill:var(--gold);}
+    .c-lbl{font-family:'Cinzel',serif;font-size:.56rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:4px;}
+    .c-val{font-size:.95rem;font-weight:600;color:var(--navy);transition:color .2s;}
+    .c-val:hover{color:var(--gold);}
+    .c-sub{font-size:.76rem;color:var(--gray);margin-top:2px;}
+
+    .c-offices{margin-top:32px;padding-top:32px;border-top:1px solid var(--lt-gray);}
+    .c-offices-title{font-family:'Cinzel',serif;font-size:.6rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+    .c-office{display:flex;gap:14px;margin-bottom:16px;}
+    .c-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);margin-top:7px;flex-shrink:0;}
+    .c-oname{font-family:'Cinzel',serif;font-size:.66rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);display:block;}
+    .c-oaddr{font-size:.82rem;color:var(--gray);line-height:1.65;}
+
+    /* form */
+    .c-form{background:var(--off-white);padding:52px 46px;border-radius:2px;}
+    .c-form-title{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+    .c-form-sub{font-size:.8rem;color:var(--gray);margin-bottom:32px;}
+    .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+    .f-grp{display:flex;flex-direction:column;margin-bottom:16px;}
+    .f-lbl{font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);margin-bottom:8px;}
+    .f-in,.f-sel,.f-ta{font-family:'Montserrat',sans-serif;font-size:.88rem;color:var(--charcoal);background:#fff;border:2px solid transparent;border-radius:1px;padding:13px 16px;outline:none;transition:border-color .2s;width:100%;}
+    .f-in:focus,.f-sel:focus,.f-ta:focus{border-color:var(--gold);}
+    .f-ta{resize:vertical;min-height:110px;}
+    .f-btn{width:100%;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;background:var(--navy);color:#fff;border:2px solid var(--navy);border-radius:1px;padding:16px;cursor:pointer;transition:background .25s,color .25s,border-color .25s;}
+    .f-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy);}
+    .f-note{font-size:.7rem;color:var(--gray);text-align:center;margin-top:12px;}
+    #form-ok{display:none;margin-top:14px;padding:14px;background:#e8f5e9;border:1px solid #a5d6a7;color:#2e7d32;font-size:.84rem;text-align:center;border-radius:2px;}
+
+    /* ──────────────────────────────────────
+       FOOTER
+    ────────────────────────────────────── */
+    footer{background:var(--navy);}
+    .footer-top{
+      display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:60px;
+      padding:70px 56px 56px;
+      border-bottom:1px solid rgba(255,255,255,.07);
+      max-width:1260px;margin:0 auto;
+    }
+    .f-bname{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:2px;margin-bottom:4px;}
+    .f-brole{font-family:'Cinzel',serif;font-size:.58rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+    .f-btag{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:4px;color:rgba(212,166,55,.5);text-transform:uppercase;line-height:2;}
+    .f-blic{font-size:.7rem;color:rgba(255,255,255,.28);margin-top:14px;}
+
+    .f-col-title{font-family:'Cinzel',serif;font-size:.6rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;}
+    .f-nav{list-style:none;display:flex;flex-direction:column;gap:10px;}
+    .f-nav a{font-size:.84rem;color:rgba(255,255,255,.42);transition:color .2s;}
+    .f-nav a:hover{color:var(--gold);}
+    .f-crow{display:flex;align-items:center;gap:10px;font-size:.82rem;color:rgba(255,255,255,.42);margin-bottom:10px;}
+    .f-crow svg{width:15px;fill:var(--gold);flex-shrink:0;}
+    .f-crow a{color:rgba(255,255,255,.42);transition:color .2s;}
+    .f-crow a:hover{color:var(--gold);}
+
+    .footer-bottom{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:26px 56px;max-width:1260px;margin:0 auto;
+      font-size:.71rem;color:rgba(255,255,255,.28);
+    }
+    .f-badges{display:flex;align-items:center;gap:20px;}
+    .f-badge{display:flex;flex-direction:column;align-items:center;gap:4px;}
+    .f-badge-box{width:34px;height:34px;border:1px solid rgba(212,166,55,.22);border-radius:3px;display:flex;align-items:center;justify-content:center;}
+    .f-badge-box svg{width:18px;fill:var(--gold);}
+    .f-badge span{font-size:.48rem;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.22);}
+
+    /* ──────────────────────────────────────
+       FLOATING ACTIONS
+    ────────────────────────────────────── */
+    .fab{position:fixed;bottom:24px;right:24px;z-index:800;display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
+    .fab-btn{display:flex;align-items:center;gap:10px;padding:11px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:1px;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:transform .2s,opacity .2s;}
+    .fab-btn:hover{transform:scale(1.04);}
+    .fab-btn svg{width:17px;fill:currentColor;}
+    .fab-call{background:var(--gold);color:var(--navy);}
+    .fab-mail{background:var(--navy);color:#fff;border:1px solid rgba(212,166,55,.2);}
+
+    /* ──────────────────────────────────────
+       RESPONSIVE
+    ────────────────────────────────────── */
+    @media(max-width:1024px){
+      .about-grid{grid-template-columns:1fr;gap:60px;}
+      .about-photo{max-width:380px;margin:0 auto;}
+      .cta-inner{grid-template-columns:1fr;gap:48px;text-align:center;}
+      .cta-stats{border-right:none;border-bottom:1px solid rgba(212,166,55,.3);padding-right:0;padding-bottom:36px;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:32px;}
+      .cta-quote-col{border-left:none;border-top:1px solid rgba(212,166,55,.3);padding-left:0;padding-top:36px;}
+      .cta-portrait{margin:0 auto;}
+      .services-grid{grid-template-columns:1fr 1fr;}
+      .contact-grid{grid-template-columns:1fr;}
+      .footer-top{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:768px){
+      #nav{padding:16px 20px;}
+      #nav.stuck{padding:12px 20px;}
+      .nav-links{display:none;position:fixed;inset:0;background:rgba(0,27,42,.97);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:850;}
+      .nav-links.open{display:flex;}
+      .nav-links a{font-size:.9rem;}
+      .ham{display:flex;}
+
+      .pad{padding:72px 24px;}
+      .pad-sm{padding:52px 24px;}
+      .hero-content{padding:90px 24px 80px;max-width:100%;}
+      .hero-agent-badge{display:none;}
+      .hero-scroll{display:none;}
+
+      .info-bar{grid-template-columns:1fr 1fr;}
+      .info-item:nth-child(2){border-right:none;}
+
+      .pillars-grid{grid-template-columns:1fr 1fr;}
+      .services-grid{grid-template-columns:1fr;}
+      .t-grid{grid-template-columns:1fr;}
+      .t-header{flex-direction:column;align-items:flex-start;gap:16px;}
+
+      .cta-inner{padding:60px 24px;}
+      .cta-watermark{font-size:clamp(3rem,15vw,6rem);}
+      .cta-medallion{width:220px;height:220px;}
+
+      .footer-top{grid-template-columns:1fr;gap:36px;padding:52px 24px 44px;}
+      .footer-bottom{flex-direction:column;gap:16px;padding:24px;text-align:center;}
+      .c-form{padding:36px 24px;}
+      .f-row{grid-template-columns:1fr;}
+      .fab{bottom:16px;right:16px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <svg class="nav-key" viewBox="0 0 58 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- K letterform background -->
+      <text x="2" y="44" font-family="Georgia,serif" font-weight="900" font-size="52" fill="white" opacity="0.13">K</text>
+      <!-- Key icon -->
+      <circle cx="30" cy="18" r="14" stroke="#D4A637" stroke-width="3.5"/>
+      <circle cx="30" cy="18" r="5.5" fill="#D4A637"/>
+      <rect x="27.5" y="31" width="5" height="28" fill="#D4A637" rx="1.5"/>
+      <rect x="27.5" y="46" width="12" height="4.5" fill="#D4A637" rx="1.5"/>
+      <rect x="27.5" y="54.5" width="8.5" height="4" fill="#D4A637" rx="1.5"/>
+    </svg>
+    <div class="nav-brand">
+      <span class="nav-brand-top">KEY REALTY</span>
+      <span class="nav-brand-sub">Giselle Tate</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="cta-link">Contact</a></li>
+  </ul>
+  <div class="ham" id="ham" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     HERO — LUXURY LAS VEGAS HOME
+══════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-gradient"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow rv">
+      <div class="hero-eyebrow-line"></div>
+      <span>Key Realty · Las Vegas, Nevada</span>
+    </div>
+    <h1 class="hero-title rv d1">
+      GISELLE<br><span class="line2">TATE</span>
+    </h1>
+    <p class="hero-sub rv d2">
+      REALTOR® &amp; Luxury Real Estate Specialist proudly serving<br>
+      Las Vegas, NV and surrounding areas. Your dream home is closer than you think.
+    </p>
+    <div class="hero-btns rv d3">
+      <a href="#contact" class="btn btn-gold">Find Your Dream Home</a>
+      <a href="#about" class="btn btn-ghost">Meet Giselle</a>
+    </div>
+  </div>
+
+  <!-- Floating agent card (bottom-right) -->
+  <div class="hero-agent-badge rv d4">
+    <div class="hero-badge-photo">
+      <img src="brand_assets/solopicture.PNG" alt="Giselle Tate" />
+    </div>
+    <div>
+      <span class="hero-badge-name">Giselle Tate</span>
+      <span class="hero-badge-role">Luxury Real Estate Specialist</span>
+      <span class="hero-badge-brokerage">Key Realty · NV Lic. S.0203894</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll to Explore</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     QUICK INFO BAR
+══════════════════════════════════════ -->
+<div class="info-bar">
+  <div class="info-item rv">
+    <div class="info-n">15+</div>
+    <div class="info-l">Years Experience</div>
+  </div>
+  <div class="info-item rv d1">
+    <div class="info-n">500+</div>
+    <div class="info-l">Homes Sold</div>
+  </div>
+  <div class="info-item rv d2">
+    <div class="info-n">$250M+</div>
+    <div class="info-l">Volume Closed</div>
+  </div>
+  <div class="info-item rv d3">
+    <div class="info-n">5★</div>
+    <div class="info-l">Client Satisfaction</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     ABOUT — SOLO PICTURE
+══════════════════════════════════════ -->
+<section id="about" class="pad">
+  <div class="wrap about-grid">
+
+    <!-- Photo with gold corner accents -->
+    <div class="about-photo rv">
+      <div class="about-photo-accent"></div>
+      <div class="about-photo-inner">
+        <img src="brand_assets/solopicture.PNG" alt="Giselle Tate – Las Vegas REALTOR®" />
+      </div>
+      <div class="about-photo-accent2"></div>
+      <div class="about-badge">
+        <div class="about-badge-n">#1</div>
+        <div class="about-badge-l">Referral Agent</div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div>
+      <div class="eyebrow rv d1">
+        <div class="eyebrow-line"></div>
+        <span>About Giselle</span>
+      </div>
+      <h2 class="sec-title rv d2">Tate Homes<br>With Giselle</h2>
+      <div class="about-body rv d3">
+        <p>Giselle Tate is a distinguished <strong>REALTOR® and Luxury Real Estate Specialist</strong> with Key Realty, serving the greater Las Vegas valley with passion, expertise, and an unwavering commitment to every client's success.</p>
+        <p>Whether you're buying your first home, upgrading to a luxury estate, or positioning a property for maximum return, Giselle brings a <strong>personalized, white-glove approach</strong> to every transaction — from initial consultation through closing day and beyond.</p>
+        <p>Her deep knowledge spans Las Vegas's most sought-after communities — from <strong>Boca Park</strong> to <strong>Silverado Ranch</strong> — giving clients an unmatched advantage in both buying and selling. The majority of her business comes exclusively through referrals, a testament to the lasting trust she builds with every client.</p>
+      </div>
+      <div class="about-chips rv d4">
+        <span class="chip">REALTOR®</span>
+        <span class="chip">MLS Member</span>
+        <span class="chip">Luxury Specialist</span>
+        <span class="chip">Key Realty</span>
+      </div>
+      <p class="about-lic rv d4">NV License # S.0203894 &nbsp;·&nbsp; <em>"I Love Referrals!"</em></p>
+      <div class="rv d5" style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="#contact" class="btn btn-gold">Start Your Journey</a>
+        <a href="tel:7144045941" class="btn btn-outline">Call (714) 404-5941</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     BRAND PILLARS
+══════════════════════════════════════ -->
+<section id="pillars" class="pad diamond-bg">
+  <div class="wrap">
+    <div class="pillars-header">
+      <div class="eyebrow center rv"><div class="eyebrow-line"></div><span>The Giselle Standard</span><div class="eyebrow-line"></div></div>
+      <h2 class="sec-title light rv d1" style="text-align:center;">Four Principles.<br>One Promise.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar rv">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+        <div class="pillar-title">Integrity</div>
+        <div class="pillar-desc">Honesty and transparency in every interaction. Your trust is the foundation everything is built on.</div>
+      </div>
+      <div class="pillar rv d1">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 1l2.39 7.26H22l-6.18 4.5 2.36 7.24L12 15.27l-6.18 4.73 2.36-7.24L2 8.26h7.61z"/></svg></div>
+        <div class="pillar-title">Excellence</div>
+        <div class="pillar-desc">An unwavering commitment to quality in service, strategy, and every detail of your experience.</div>
+      </div>
+      <div class="pillar rv d2">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+        <div class="pillar-title">Client-Focused</div>
+        <div class="pillar-desc">Putting your goals first — always. Personal, caring, attentive service that makes you feel like the only client.</div>
+      </div>
+      <div class="pillar rv d3">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg></div>
+        <div class="pillar-title">Results</div>
+        <div class="pillar-desc">Resourceful, strategic, and relentlessly focused on delivering exceptional outcomes for every client.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SERVICES
+══════════════════════════════════════ -->
+<section id="services" class="pad">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:0;">
+      <div>
+        <div class="eyebrow rv"><div class="eyebrow-line"></div><span>What I Offer</span></div>
+        <h2 class="sec-title rv d1">Full-Service<br>Real Estate Expertise</h2>
+      </div>
+      <p class="sec-lead rv d2" style="max-width:100%;">From your very first conversation to closing day and long after — every detail handled with precision and care.</p>
+    </div>
+    <div class="services-grid rv d1">
+      <div class="svc">
+        <div class="svc-num">01</div>
+        <div class="svc-title">Home Buying</div>
+        <p class="svc-desc">Expert guidance from pre-approval through closing. Giselle negotiates hard to get you the right home at the right price.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-num">02</div>
+        <div class="svc-title">Home Selling</div>
+        <p class="svc-desc">Strategic pricing, professional marketing, and proven negotiation skills to sell faster and for more money.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-num">03</div>
+        <div class="svc-title">Luxury Properties</div>
+        <p class="svc-desc">Specialized expertise in Las Vegas's premier luxury market with access to exclusive off-market opportunities.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-num">04</div>
+        <div class="svc-title">Market Analysis</div>
+        <p class="svc-desc">Comprehensive CMAs and current trend data so every decision is backed by real numbers, not guesswork.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-num">05</div>
+        <div class="svc-title">Relocation Services</div>
+        <p class="svc-desc">Moving to Las Vegas? Giselle helps you find the perfect neighborhood, school, and lifestyle fit from day one.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-num">06</div>
+        <div class="svc-title">Investment Properties</div>
+        <p class="svc-desc">Identify high-ROI opportunities in the Las Vegas market with diligent research and investment-focused strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CTA BANNER — THE SURPRISE
+     Editorial Medallion Layout
+══════════════════════════════════════ -->
+<section id="cta">
+  <div class="cta-rule"></div>
+  <div class="cta-watermark">SOLD BY CHICA</div>
+
+  <div class="cta-inner">
+
+    <!-- LEFT: Stats -->
+    <div class="cta-stats rv">
+      <div class="cta-stat-item">
+        <div class="cta-stat-n">500<span style="color:var(--gold);">+</span></div>
+        <div class="cta-stat-l">Homes Sold</div>
+        <div class="cta-stat-d">And counting — across every price point.</div>
+      </div>
+      <div class="cta-stat-item">
+        <div class="cta-stat-n">$250<span style="color:var(--gold);font-size:2rem;">M+</span></div>
+        <div class="cta-stat-l">Volume Closed</div>
+        <div class="cta-stat-d">Proven results at every level of the market.</div>
+      </div>
+      <div class="cta-stat-item">
+        <div class="cta-stat-n">100<span style="color:var(--gold);">%</span></div>
+        <div class="cta-stat-l">Referral Powered</div>
+        <div class="cta-stat-d">Clients so happy they send their family.</div>
+      </div>
+    </div>
+
+    <!-- CENTER: Portrait Medallion -->
+    <div class="cta-portrait rv d2">
+      <!-- Key icon -->
+      <div class="cta-key-icon">
+        <svg viewBox="0 0 60 28" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="14" r="11" fill="none" stroke="#D4A637" stroke-width="2.2"/>
+          <circle cx="12" cy="14" r="4.5" fill="#D4A637"/>
+          <line x1="22.5" y1="14" x2="58" y2="14" stroke="#D4A637" stroke-width="2.2"/>
+          <line x1="47" y1="14" x2="47" y2="19.5" stroke="#D4A637" stroke-width="2.2"/>
+          <line x1="54" y1="14" x2="54" y2="18" stroke="#D4A637" stroke-width="2.2"/>
+        </svg>
+      </div>
+      <!-- Medallion -->
+      <div class="cta-medallion">
+        <div class="cta-ring"></div>
+        <div class="cta-circle">
+          <img src="brand_assets/solopicture.PNG" alt="Giselle Tate" />
+        </div>
+      </div>
+      <!-- Motto -->
+      <div class="cta-motto">
+        Unlocking Doors
+        <em>Opening Dreams</em>
+        Tate Homes With Giselle
+      </div>
+    </div>
+
+    <!-- RIGHT: Quote + CTA -->
+    <div class="cta-quote-col rv d3">
+      <div class="cta-quote-mark">"</div>
+      <div class="cta-quote-text">Your next chapter begins with a single conversation.</div>
+      <div class="cta-quote-attr">— <strong>Giselle Tate</strong>, REALTOR®<br>Las Vegas's Trusted Luxury Specialist</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <a href="#contact" class="btn btn-navy">Let's Work Together</a>
+        <a href="tel:7144045941" class="btn btn-outline">Call (714) 404-5941</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="cta-rule"></div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section id="testimonials" class="pad diamond-bg">
+  <div class="wrap">
+    <div class="t-header">
+      <div>
+        <div class="eyebrow rv"><div class="eyebrow-line"></div><span style="color:var(--gold);">Client Reviews</span></div>
+        <h2 class="sec-title light rv d1">What Clients Say</h2>
+      </div>
+      <div class="rv d2">
+        <a href="#contact" class="btn btn-ghost">Leave a Review</a>
+      </div>
+    </div>
+    <div class="t-grid">
+      <div class="t-card rv">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Giselle made our home-buying experience absolutely seamless. She found us our dream home in Summerlin before it even hit the market. Her connections and market knowledge are truly unmatched!"</p>
+        <div class="t-author">
+          <div class="t-av">MR</div>
+          <div><div class="t-name">Maria &amp; Robert L.</div><div class="t-loc">Summerlin, Las Vegas</div></div>
+        </div>
+      </div>
+      <div class="t-card rv d1">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"Sold our home $40K over asking in just 8 days. Giselle's marketing strategy was brilliant and her negotiation skills are second to none. We've already referred three friends to her!"</p>
+        <div class="t-author">
+          <div class="t-av">JM</div>
+          <div><div class="t-name">James &amp; Michelle T.</div><div class="t-loc">Silverado Ranch, Las Vegas</div></div>
+        </div>
+      </div>
+      <div class="t-card rv d2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">"As a luxury buyer relocating from California, I needed someone who truly understood the high-end market. Giselle was professional, patient, and found us an extraordinary property."</p>
+        <div class="t-author">
+          <div class="t-av">DK</div>
+          <div><div class="t-name">David K.</div><div class="t-loc">Henderson, Las Vegas</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<section id="contact" class="pad">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow rv"><div class="eyebrow-line"></div><span>Get In Touch</span></div>
+      <h2 class="sec-title rv d1">Let's Find Your<br>Perfect Home</h2>
+      <p class="c-lead rv d2">Ready to buy, sell, or simply explore what's possible? Giselle is here to guide you every step of the way.</p>
+
+      <div class="c-row rv d2">
+        <div class="c-ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div>
+          <span class="c-lbl">Cell</span>
+          <a href="tel:7144045941" class="c-val">(714) 404-5941</a>
+          <div class="c-sub">Call or text anytime</div>
+        </div>
+      </div>
+      <div class="c-row rv d2">
+        <div class="c-ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div>
+          <span class="c-lbl">Office</span>
+          <a href="tel:7027487586" class="c-val">(702) 748-7586</a>
+          <div class="c-sub">Key Realty main line</div>
+        </div>
+      </div>
+      <div class="c-row rv d3">
+        <div class="c-ic"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div>
+          <span class="c-lbl">Email</span>
+          <a href="mailto:Giselle.OneRealty@gmail.com" class="c-val">Giselle.OneRealty@gmail.com</a>
+          <div class="c-sub">Responds within a few hours</div>
+        </div>
+      </div>
+      <div class="c-row rv d3">
+        <div class="c-ic"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96z"/></svg></div>
+        <div>
+          <span class="c-lbl">Website</span>
+          <a href="https://www.SoldByChica.com" target="_blank" rel="noopener" class="c-val">www.SoldByChica.com</a>
+        </div>
+      </div>
+
+      <div class="c-offices rv d4">
+        <div class="c-offices-title">Office Locations</div>
+        <div class="c-office">
+          <div class="c-dot"></div>
+          <div>
+            <span class="c-oname">Boca Park</span>
+            <div class="c-oaddr">8704 W. Charleston Blvd., Suite 105<br>Las Vegas, NV 89117</div>
+          </div>
+        </div>
+        <div class="c-office">
+          <div class="c-dot"></div>
+          <div>
+            <span class="c-oname">Silverado Ranch</span>
+            <div class="c-oaddr">9890 S. Maryland Pkwy., Suite 200<br>Las Vegas, NV 89183</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="c-form rv d2">
+      <div class="c-form-title">Send a Message</div>
+      <div class="c-form-sub">I'll get back to you within 24 hours — usually much sooner.</div>
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <div class="f-row">
+          <div class="f-grp" style="margin-bottom:0;">
+            <label class="f-lbl" for="fn">First Name</label>
+            <input class="f-in" id="fn" type="text" placeholder="Maria" required />
+          </div>
+          <div class="f-grp" style="margin-bottom:0;">
+            <label class="f-lbl" for="ln">Last Name</label>
+            <input class="f-in" id="ln" type="text" placeholder="Garcia" required />
+          </div>
+        </div>
+        <div class="f-row" style="margin-top:16px;">
+          <div class="f-grp" style="margin-bottom:0;">
+            <label class="f-lbl" for="em">Email</label>
+            <input class="f-in" id="em" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="f-grp" style="margin-bottom:0;">
+            <label class="f-lbl" for="ph">Phone</label>
+            <input class="f-in" id="ph" type="tel" placeholder="(702) 555-0100" />
+          </div>
+        </div>
+        <div class="f-grp">
+          <label class="f-lbl" for="int">I'm Interested In</label>
+          <select class="f-sel" id="int">
+            <option value="">Select…</option>
+            <option>Buying a Home</option>
+            <option>Selling My Home</option>
+            <option>Luxury Properties</option>
+            <option>Investment Properties</option>
+            <option>Relocation Services</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="f-grp">
+          <label class="f-lbl" for="budget">Budget Range</label>
+          <select class="f-sel" id="budget">
+            <option value="">Select…</option>
+            <option>Under $300K</option>
+            <option>$300K – $500K</option>
+            <option>$500K – $750K</option>
+            <option>$750K – $1M</option>
+            <option>$1M – $2M</option>
+            <option>$2M+</option>
+          </select>
+        </div>
+        <div class="f-grp">
+          <label class="f-lbl" for="msg">Message</label>
+          <textarea class="f-ta" id="msg" placeholder="Tell Giselle what you're looking for…"></textarea>
+        </div>
+        <button type="submit" class="f-btn">Send Message</button>
+        <p class="f-note">Your information is kept private and never shared.</p>
+        <div id="form-ok">✓ Thank you! Giselle will be in touch with you shortly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="f-bname">Giselle Tate</div>
+      <div class="f-brole">REALTOR® · Luxury Real Estate Specialist</div>
+      <div class="f-btag">Unlocking Doors · Opening Dreams</div>
+      <div class="f-blic">NV License # S.0203894 &nbsp;·&nbsp; Key Realty &nbsp;·&nbsp; I Love Referrals!</div>
+    </div>
+    <div>
+      <div class="f-col-title">Navigation</div>
+      <ul class="f-nav">
+        <li><a href="#about">About Giselle</a></li>
+        <li><a href="#pillars">Brand Values</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Client Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">Contact</div>
+      <div class="f-crow"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:7144045941">(714) 404-5941</a></div>
+      <div class="f-crow"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:7027487586">(702) 748-7586</a></div>
+      <div class="f-crow"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:Giselle.OneRealty@gmail.com">Giselle.OneRealty@gmail.com</a></div>
+      <div class="f-crow"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56z"/></svg><a href="https://www.SoldByChica.com" target="_blank" rel="noopener">www.SoldByChica.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Giselle Tate · Tate Homes with Giselle · Key Realty · All rights reserved.</span>
+    <div class="f-badges">
+      <div class="f-badge"><div class="f-badge-box"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div><span>REALTOR®</span></div>
+      <div class="f-badge"><div class="f-badge-box"><svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg></div><span>MLS</span></div>
+      <div class="f-badge"><div class="f-badge-box"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div><span>Equal Housing</span></div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- FLOATING ACTIONS -->
+<div class="fab">
+  <a href="tel:7144045941" class="fab-btn fab-call">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Call Giselle
+  </a>
+  <a href="mailto:Giselle.OneRealty@gmail.com" class="fab-btn fab-mail">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    Email
+  </a>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════ -->
+<script>
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('stuck', window.scrollY > 64));
+
+  // Hero zoom-in on load
+  const hero = document.getElementById('hero');
+  setTimeout(() => hero.classList.add('loaded'), 80);
+
+  // Mobile nav
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('#navLinks a').forEach(a =>
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
+  );
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // Active nav link
+  const sects = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sects.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+    document.querySelectorAll('#navLinks a:not(.cta-link)').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--gold)' : '';
+    });
+  });
+
+  // Form submit
+  function submitForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.f-btn');
+    btn.textContent = 'Sending…'; btn.disabled = true;
+    setTimeout(() => {
+      e.target.reset();
+      btn.textContent = 'Send Message'; btn.disabled = false;
+      const ok = document.getElementById('form-ok');
+      ok.style.display = 'block';
+      setTimeout(() => ok.style.display = 'none', 5000);
+    }, 1200);
+  }
+</script>
+</body>
+</html>
