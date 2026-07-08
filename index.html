@@ -98,7 +98,7 @@
     }
 
     .nav-logo{display:flex;align-items:center;gap:18px;}
-    .nav-key{width:58px;height:68px;flex-shrink:0;}
+    .nav-key{height:52px;width:auto;max-width:120px;flex-shrink:0;object-fit:contain;}
     .nav-brand{line-height:1;}
     .nav-brand-top{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:5px;display:block;}
     .nav-brand-sub{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:600;color:var(--gold);letter-spacing:3px;text-transform:uppercase;display:block;margin-top:5px;}
@@ -537,19 +537,9 @@
 ══════════════════════════════════════ -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
-    <svg class="nav-key" viewBox="0 0 58 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- K letterform background -->
-      <text x="2" y="44" font-family="Georgia,serif" font-weight="900" font-size="52" fill="white" opacity="0.13">K</text>
-      <!-- Key icon -->
-      <circle cx="30" cy="18" r="14" stroke="#D4A637" stroke-width="3.5"/>
-      <circle cx="30" cy="18" r="5.5" fill="#D4A637"/>
-      <rect x="27.5" y="31" width="5" height="28" fill="#D4A637" rx="1.5"/>
-      <rect x="27.5" y="46" width="12" height="4.5" fill="#D4A637" rx="1.5"/>
-      <rect x="27.5" y="54.5" width="8.5" height="4" fill="#D4A637" rx="1.5"/>
-    </svg>
+    <img class="nav-key" src="brand_assets/keyrealtylogo.png" alt="Key Realty" />
     <div class="nav-brand">
-      <span class="nav-brand-top">KEY REALTY</span>
-      <span class="nav-brand-sub">Giselle Tate</span>
+      <span class="nav-brand-sub" style="margin-top:0;">Giselle Tate</span>
     </div>
   </a>
   <ul class="nav-links" id="navLinks">
@@ -613,15 +603,15 @@
 ══════════════════════════════════════ -->
 <div class="info-bar">
   <div class="info-item rv">
-    <div class="info-n">15+</div>
+    <div class="info-n">20+</div>
     <div class="info-l">Years Experience</div>
   </div>
   <div class="info-item rv d1">
-    <div class="info-n">500+</div>
+    <div class="info-n">120+</div>
     <div class="info-l">Homes Sold</div>
   </div>
   <div class="info-item rv d2">
-    <div class="info-n">$250M+</div>
+    <div class="info-n">$50M+</div>
     <div class="info-l">Volume Closed</div>
   </div>
   <div class="info-item rv d3">
@@ -774,12 +764,12 @@
     <!-- LEFT: Stats -->
     <div class="cta-stats rv">
       <div class="cta-stat-item">
-        <div class="cta-stat-n">500<span style="color:var(--gold);">+</span></div>
+        <div class="cta-stat-n">120<span style="color:var(--gold);">+</span></div>
         <div class="cta-stat-l">Homes Sold</div>
         <div class="cta-stat-d">And counting — across every price point.</div>
       </div>
       <div class="cta-stat-item">
-        <div class="cta-stat-n">$250<span style="color:var(--gold);font-size:2rem;">M+</span></div>
+        <div class="cta-stat-n">$50<span style="color:var(--gold);font-size:2rem;">M+</span></div>
         <div class="cta-stat-l">Volume Closed</div>
         <div class="cta-stat-d">Proven results at every level of the market.</div>
       </div>
@@ -942,30 +932,31 @@
     <div class="c-form rv d2">
       <div class="c-form-title">Send a Message</div>
       <div class="c-form-sub">I'll get back to you within 24 hours — usually much sooner.</div>
-      <form id="contactForm" onsubmit="submitForm(event)">
+      <form id="contactForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" onsubmit="submitForm(event)">
+        <input type="hidden" name="_subject" value="New Inquiry from GiselleTate.com" />
         <div class="f-row">
           <div class="f-grp" style="margin-bottom:0;">
             <label class="f-lbl" for="fn">First Name</label>
-            <input class="f-in" id="fn" type="text" placeholder="Maria" required />
+            <input class="f-in" id="fn" name="first_name" type="text" placeholder="Maria" required />
           </div>
           <div class="f-grp" style="margin-bottom:0;">
             <label class="f-lbl" for="ln">Last Name</label>
-            <input class="f-in" id="ln" type="text" placeholder="Garcia" required />
+            <input class="f-in" id="ln" name="last_name" type="text" placeholder="Garcia" required />
           </div>
         </div>
         <div class="f-row" style="margin-top:16px;">
           <div class="f-grp" style="margin-bottom:0;">
             <label class="f-lbl" for="em">Email</label>
-            <input class="f-in" id="em" type="email" placeholder="you@example.com" required />
+            <input class="f-in" id="em" name="email" type="email" placeholder="you@example.com" required />
           </div>
           <div class="f-grp" style="margin-bottom:0;">
             <label class="f-lbl" for="ph">Phone</label>
-            <input class="f-in" id="ph" type="tel" placeholder="(702) 555-0100" />
+            <input class="f-in" id="ph" name="phone" type="tel" placeholder="(702) 555-0100" />
           </div>
         </div>
         <div class="f-grp">
           <label class="f-lbl" for="int">I'm Interested In</label>
-          <select class="f-sel" id="int">
+          <select class="f-sel" id="int" name="interested_in">
             <option value="">Select…</option>
             <option>Buying a Home</option>
             <option>Selling My Home</option>
@@ -977,7 +968,7 @@
         </div>
         <div class="f-grp">
           <label class="f-lbl" for="budget">Budget Range</label>
-          <select class="f-sel" id="budget">
+          <select class="f-sel" id="budget" name="budget">
             <option value="">Select…</option>
             <option>Under $300K</option>
             <option>$300K – $500K</option>
@@ -989,11 +980,12 @@
         </div>
         <div class="f-grp">
           <label class="f-lbl" for="msg">Message</label>
-          <textarea class="f-ta" id="msg" placeholder="Tell Giselle what you're looking for…"></textarea>
+          <textarea class="f-ta" id="msg" name="message" placeholder="Tell Giselle what you're looking for…"></textarea>
         </div>
         <button type="submit" class="f-btn">Send Message</button>
         <p class="f-note">Your information is kept private and never shared.</p>
         <div id="form-ok">✓ Thank you! Giselle will be in touch with you shortly.</div>
+        <div id="form-err" style="display:none;margin-top:14px;padding:14px;background:#fdecea;border:1px solid #f5c6cb;color:#c0392b;font-size:.84rem;text-align:center;border-radius:2px;">There was a problem sending your message. Please email <a href="mailto:Gisele.OneRealty@gmail.com">Gisele.OneRealty@gmail.com</a> directly.</div>
       </form>
     </div>
   </div>
@@ -1089,18 +1081,32 @@
     });
   });
 
-  // Form submit
-  function submitForm(e) {
+  // Form submit — sends directly to Gisele.OneRealty@gmail.com via Formspree
+  async function submitForm(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.f-btn');
+    const form = e.target;
+    const btn = form.querySelector('.f-btn');
+    const ok  = document.getElementById('form-ok');
+    const err = document.getElementById('form-err');
     btn.textContent = 'Sending…'; btn.disabled = true;
-    setTimeout(() => {
-      e.target.reset();
-      btn.textContent = 'Send Message'; btn.disabled = false;
-      const ok = document.getElementById('form-ok');
-      ok.style.display = 'block';
-      setTimeout(() => ok.style.display = 'none', 5000);
-    }, 1200);
+    ok.style.display = 'none'; err.style.display = 'none';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        ok.style.display = 'block';
+        setTimeout(() => ok.style.display = 'none', 6000);
+      } else {
+        err.style.display = 'block';
+      }
+    } catch (_) {
+      err.style.display = 'block';
+    }
+    btn.textContent = 'Send Message'; btn.disabled = false;
   }
 </script>
 </body>
