@@ -97,11 +97,25 @@
       backdrop-filter:blur(12px);
     }
 
-    .nav-logo{display:flex;align-items:center;gap:18px;}
-    .nav-key{height:52px;width:auto;max-width:120px;flex-shrink:0;object-fit:contain;}
+    .nav-logo{display:flex;align-items:center;gap:14px;}
+    .nav-key-wrap{
+      position:relative;flex-shrink:0;
+      padding:5px 10px;
+      border:1px solid rgba(212,166,55,.45);
+      border-radius:4px;
+      background:rgba(0,10,20,.75);
+      box-shadow:0 0 0 1px rgba(212,166,55,.1),0 4px 24px rgba(0,0,0,.45),inset 0 1px 0 rgba(212,166,55,.2);
+      overflow:hidden;
+    }
+    .nav-key-wrap::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:1px;
+      background:linear-gradient(to right,transparent,rgba(212,166,55,.7),transparent);
+    }
+    .nav-key{height:54px;width:auto;max-width:86px;display:block;object-fit:contain;}
+    .nav-divider{width:1px;height:42px;flex-shrink:0;background:linear-gradient(to bottom,transparent,rgba(212,166,55,.5) 25%,rgba(212,166,55,.5) 75%,transparent);}
     .nav-brand{line-height:1;}
-    .nav-brand-top{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:5px;display:block;}
-    .nav-brand-sub{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:600;color:var(--gold);letter-spacing:3px;text-transform:uppercase;display:block;margin-top:5px;}
+    .nav-brand-top{font-family:'Cinzel',serif;font-size:1.2rem;font-weight:700;color:#fff;letter-spacing:4px;display:block;}
+    .nav-brand-sub{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:600;color:var(--gold);letter-spacing:3px;text-transform:uppercase;display:block;margin-top:6px;}
 
     .nav-links{display:flex;align-items:center;gap:38px;list-style:none;}
     .nav-links a{font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.8);position:relative;transition:color .2s;}
@@ -537,9 +551,13 @@
 ══════════════════════════════════════ -->
 <nav id="nav">
   <a href="#hero" class="nav-logo">
-    <img class="nav-key" src="brand_assets/keyrealtylogo.png" alt="Key Realty" />
+    <div class="nav-key-wrap">
+      <img class="nav-key" src="brand_assets/keyrealtylogo.png" alt="Key Realty" />
+    </div>
+    <div class="nav-divider"></div>
     <div class="nav-brand">
-      <span class="nav-brand-sub" style="margin-top:0;">Giselle Tate</span>
+      <span class="nav-brand-top">GISELLE TATE</span>
+      <span class="nav-brand-sub">REALTOR® · KEY REALTY</span>
     </div>
   </a>
   <ul class="nav-links" id="navLinks">
@@ -932,7 +950,7 @@
     <div class="c-form rv d2">
       <div class="c-form-title">Send a Message</div>
       <div class="c-form-sub">I'll get back to you within 24 hours — usually much sooner.</div>
-      <form id="contactForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" onsubmit="submitForm(event)">
+      <form id="contactForm" action="https://formspree.io/f/xnjkkqok" method="POST" onsubmit="submitForm(event)">
         <input type="hidden" name="_subject" value="New Inquiry from GiselleTate.com" />
         <div class="f-row">
           <div class="f-grp" style="margin-bottom:0;">
